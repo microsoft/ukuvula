@@ -1,0 +1,61 @@
+# Exclude data directories
+data/
+figs/
+results/
+logs/
+paper/
+*.log
+
+# Old/archived resources
+old_resources/
+
+# Chat applications (separate deployments)
+mandela_chat/
+nmf_chat/
+
+# Jupyter notebooks
+*.ipynb
+getting_started.ipynb
+
+# Azure DevOps pipelines (internal CI/CD)
+.azure-pipelines/
+
+# Environment variables and secrets
+.env
+*.env
+secrets/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Output directories
+transcription_outputs/
+temp/
+
+# IDE and tool configuration
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Deprecated scripts
+automated_download_recordings.py
+
+

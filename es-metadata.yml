@@ -1,0 +1,14 @@
+schemaVersion: 1.0.0
+providers:
+- provider: InventoryAsCode
+  version: 1.0.0
+  metadata:
+    isProduction: false
+    accountableOwners:
+      directOwners:
+      - gtadesse@microsoft.com
+      - inbalbe@microsoft.com
+    routing:
+      defaultAreaPath:
+        org: oneCELA
+        path: AI For Good Lab

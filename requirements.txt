@@ -1,0 +1,36 @@
+# Core dependencies
+numpy==2.4.2
+matplotlib==3.10.8
+scipy==1.17.0
+pandas==3.0.1
+soundfile==0.13.1
+seaborn==0.13.2
+
+# Audio processing
+pydub==0.25.1
+librosa==0.11.0
+noisereduce==3.0.3
+# torch and torchaudio are installed via conda (see environment.yml)
+
+# WhisperX and related
+whisperx==3.7.2
+transformers==5.0.0
+faster-whisper==1.2.1
+ctranslate2==4.6.3
+
+# Speaker diarization
+pyannote.audio==3.4.0
+speechbrain==1.0.3
+
+# Language detection and processing
+langdetect==1.0.9
+openai==1.60.0
+python-dotenv==1.2.1
+
+# Utilities
+tqdm==4.67.1
+colorlog==6.10.1
+click==8.3.1
+pathlib2==2.3.7.post1
+llvmlite==0.46.0
+python-docx==1.2.0

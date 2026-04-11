@@ -1,0 +1,13 @@
+name: nmf
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.11.14
+  - pytorch=2.10.0
+  - torchaudio=2.10.0
+  - pytorch-cuda=12.4
+  - pip
+  - pip:
+    - -r requirements.txt
