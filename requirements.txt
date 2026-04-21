@@ -25,7 +25,7 @@ speechbrain==1.0.3
 # Language detection and processing
 langdetect==1.0.9
 openai==1.60.0
-python-dotenv==1.2.1
+python-dotenv==1.2.2
 
 # Utilities
 tqdm==4.67.1
