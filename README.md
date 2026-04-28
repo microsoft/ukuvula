@@ -53,14 +53,7 @@ The pipeline extracted 31,686 named entities across five categories (person, org
 conda env create -f environment.yml
 conda activate nmf
 
-# 2. Configure credentials (copy template, fill in values)
-cp .env.example .env
-# ⚠️ .env contains secrets — do NOT commit it to source control
-
-# 3. Authenticate with Azure (required for GPT features)
-az login
-
-# 4. Run the transcription pipeline
+# 2. Run the transcription pipeline
 bash run_pipeline.sh large-v2 "data/nmf_recordings/<Collection>"
 ```
 
@@ -80,18 +73,6 @@ are installed via `requirements.txt`, referenced from `environment.yml`.
 > **Note**: The pipeline script (`run_pipeline.sh`) expects a conda environment
 > named `nmf`. Using conda for PyTorch ensures cuDNN libraries are correctly
 > placed in `$CONDA_PREFIX/lib/` without manual symlinks.
-
-### Credentials
-
-Copy `.env.example` to `.env` and fill in the required values:
-
-| Variable | Required For | Description |
-|----------|-------------|-------------|
-| `AZURE_OPENAI_ENDPOINT` | GPT features (Steps 6-8) | Your Azure OpenAI resource URL |
-| `AZURE_OPENAI_MODEL` | GPT features | Deployment name (default: `gpt-4o`) |
-| `HUGGINGFACE_TOKEN` | Speaker diarization | HuggingFace access token for pyannote models |
-
-GPT features use Azure AD authentication (`DefaultAzureCredential`). Run `az login` before use.
 
 ---
 
@@ -252,7 +233,6 @@ python src/analysis/metadata_analysis.py
 ├── setup_environment.sh                       # Conda environment setup
 ├── requirements.txt                           # Pinned Python dependencies
 ├── environment.yml                            # Conda environment specification
-├── .env.example                               # Environment variable template
 ├── figures/                                   # Figures for README and documentation
 │   ├── ukuvula_overview.png                   # Pipeline overview diagram
 │   ├── top_locations_world_overlay_pub.png    # Geographic entity map
