@@ -1,7 +1,7 @@
 # Exclude data directories
 data/
 figs/
-results/
+results-untracked/
 logs/
 paper/
 *.log
