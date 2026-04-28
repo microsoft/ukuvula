@@ -12,6 +12,8 @@ Oral history archives preserve irreplaceable records of lived experience, yet mo
 
 ## Corpus Characteristics
 
+Per-recording technical metadata — including duration, sample rate, channels, speaker count, RMS energy, zero-crossing rate, and spectral centroid — is available in [`results/metadata_analysis.csv`](results/metadata_analysis.csv).
+
 <p align="center">
   <img src="figures/metadata_analysis/duration_hist_hours.png" alt="Duration distribution" width="60%"/>
 </p>
@@ -24,11 +26,13 @@ Oral history archives preserve irreplaceable records of lived experience, yet mo
 
 **Figure 3.** Estimated unique speaker counts per recording via pyannote.audio speaker diarization. Modal cases are single-speaker and two-speaker recordings; the tail of 3–6 speakers reflects multi-participant discussions.
 
+The pipeline extracted 31,686 named entities across five categories (person, organization, location, event, date/time) from the full transcription corpus. The complete entity catalog is available in [`results/entities_extracted.csv`](results/entities_extracted.csv).
+
 <p align="center">
   <img src="figures/top_locations_world_overlay_pub.png" alt="Geographic footprint" width="85%"/>
 </p>
 
-**Figure 4.** Global geographic footprint of the top 100 location entities by distinct file count. Spatial concentration in Southern Africa reflects regional organizational activity; transnational points (London, United States) indicate diplomatic and advocacy networks.
+**Figure 4.** Global geographic footprint of the top 100 location entities by distinct file count, derived from the entity catalog. Spatial concentration in Southern Africa reflects regional organizational activity; transnational points (London, United States) indicate diplomatic and advocacy networks.
 
 ## Illustrative Examples
 
@@ -258,14 +262,14 @@ python src/analysis/metadata_analysis.py
 └── THIRD_PARTY_NOTICES.md                     # Third-party license attributions
 ```
 
-### Output Directories (gitignored)
+### Output Directories
 
-| Directory | Contents |
-|-----------|----------|
-| `data/` | Input audio/video files |
-| `transcription_outputs/` | Per-file transcription CSVs |
-| `results/` | All derived artifacts (aggregated transcripts, entities, clusters, figures) |
-| `logs/` | Pipeline execution logs |
+| Directory | Tracked | Contents |
+|-----------|---------|----------|
+| `data/` | No | Input audio/video files |
+| `transcription_outputs/` | No | Per-file transcription CSVs |
+| `results/` | Yes | Derived artifacts (metadata, entities, aggregated transcripts, clusters, figures) |
+| `logs/` | No | Pipeline execution logs |
 
 ---
 
